@@ -12,10 +12,12 @@ import javax.persistence.Table;
 public class Aluno {
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	// ParaMYSQL @GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator ="seq_usuario")
+	
 	private Long id;
 	
-	@Column(name="nome", nullable =false)
+	@Column(name="nome", nullable = false )
 	private String nome;
 	
 	@Column(name="sobrenome")
